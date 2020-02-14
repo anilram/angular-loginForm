@@ -5,7 +5,7 @@
 <label>Username <input #name='ngModel' name="name" required [(ngModel)]='model.name' > <em [hidden]='!(name.valid)'>{{name.value}}</em></label>
 <p [hidden]='(name.valid || name.pristine)'> Please Enter</p>
 <p></p>
-<label>Password <input (click)='click($event)' required name = "pwd" #pwd type="password" [(ngModel)]='model.pwd'></label>
+<label>Password <input required name = "pwd" #pwd type="password" [(ngModel)]='model.pwd'></label>
 <p></p>
 <button [disabled]='!(loginForm.form.valid || loginForm.form.pristine)' type = "submit" > Submit </button>
 &nbsp;
