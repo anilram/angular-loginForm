@@ -1,0 +1,14 @@
+<p>Login</p>
+<form #loginForm='ngForm' (ngSubmit)='onSubmit(name.value,pwd.value)'>
+<label>Account Type <select required><option *ngFor='let accountType of accountTypes'  [value]="accountType.id">{{accountType.name}}</option></select></label>
+<p></p>
+<label>Username <input #name='ngModel' name="name" required [(ngModel)]='model.name' > <em [hidden]='!(name.valid)'>{{name.value}}</em></label>
+<p [hidden]='(name.valid || name.pristine)'> Please Enter</p>
+<p></p>
+<label>Password <input (click)='click($event)' required name = "pwd" #pwd type="password" [(ngModel)]='model.pwd'></label>
+<p></p>
+<button [disabled]='!(loginForm.form.valid || loginForm.form.pristine)' type = "submit" > Submit </button>
+&nbsp;
+<button (click)='loginForm.reset()' type = "submit" > Clear </button>
+</form>
+<form>
