@@ -18,9 +18,5 @@ export class AppComponent implements OnInit{
   onSubmit(name : string,pwd: string){
     console.log(name +" "+ pwd);
   }
-
-  click(event : any){
-    console.log(event.target.value);
-  }
-  
+ 
 }
